@@ -1,0 +1,360 @@
+/* ============================================================
+   wagyu.css — bespoke styles for the Wagyu Rush case study.
+   Palette: brown #83511E · cream #E4E1DC · lilac #D0D5ED · peach tint
+   Tone: warm, playful — references the PDF's cream/peach pages.
+   ============================================================ */
+
+.wagyu {
+  --brown: #83511E;
+  --brown-deep: #5d3a14;
+  --cream: #f6efe6;
+  --cream-deep: #efe5d4;
+  --peach: #f8d8b4;
+  --peach-soft: #fde7cf;
+  --lilac: #D0D5ED;
+  --beige: #E4E1DC;
+  --ink: #1f1f1f;
+  --ink-2: #525252;
+  --rule: rgba(131, 81, 30, 0.16);
+
+  background: var(--cream);
+  color: var(--ink);
+  font-family: var(--font-sans, "IBM Plex Sans", system-ui, sans-serif);
+  display: block;
+  padding-bottom: 80px;
+  position: relative;
+  overflow: hidden;
+}
+
+/* warm radial wash, mirroring the PDF pages */
+.wagyu::before {
+  content: '';
+  position: absolute; inset: 0;
+  background:
+    radial-gradient(620px 380px at 92% 6%, rgba(248, 184, 122, 0.32), transparent 70%),
+    radial-gradient(540px 360px at 4% 92%, rgba(208, 213, 237, 0.28), transparent 70%);
+  pointer-events: none;
+  z-index: 0;
+}
+.wagyu > * { position: relative; z-index: 1; }
+
+[data-theme="dark"] .wagyu {
+  --cream: #1d1a14;
+  --cream-deep: #15130e;
+  --ink: #f4f4f4;
+  --ink-2: #c6c6c6;
+  --rule: rgba(248, 216, 180, 0.22);
+}
+[data-theme="dark"] .wagyu .wg-hero-card,
+[data-theme="dark"] .wagyu .wg-glance-cell,
+[data-theme="dark"] .wagyu .wg-mech-card,
+[data-theme="dark"] .wagyu .wg-mech-list,
+[data-theme="dark"] .wagyu .wg-aesthetics-card,
+[data-theme="dark"] .wagyu .wg-feedback,
+[data-theme="dark"] .wagyu .wg-feature-card {
+  background: #2a241c;
+  border-color: var(--rule);
+}
+[data-theme="dark"] .wagyu mark { background: rgba(248, 216, 180, 0.24); color: var(--peach); }
+
+/* ---------- crumb ---------- */
+.wg-crumb {
+  position: sticky; top: 64px; z-index: 10;
+  background: var(--cream);
+  border-bottom: 1px solid var(--rule);
+  padding: 14px 0;
+}
+.wg-crumb-inner {
+  max-width: 1240px; margin: 0 auto; padding: 0 56px;
+  display: flex; align-items: center; gap: 10px;
+  font-size: 13px; font-family: "IBM Plex Mono", monospace;
+  color: var(--ink-2);
+}
+.wg-crumb-inner button {
+  background: none; border: 0; cursor: pointer; color: var(--brown);
+  font: inherit; padding: 0;
+}
+.wg-crumb-inner button:hover { text-decoration: underline; }
+.wg-crumb-sep { opacity: 0.4; }
+.wg-crumb-cn { color: var(--ink); font-weight: 500; letter-spacing: 0.06em; }
+.wg-crumb-spacer { flex: 1; }
+.wg-crumb-meta { font-size: 12px; opacity: 0.7; }
+
+/* ---------- shared layout ---------- */
+.wg-section {
+  max-width: 1240px; margin: 0 auto; padding: 88px 56px;
+  border-bottom: 1px solid var(--rule);
+}
+.wg-head { max-width: 880px; margin-bottom: 40px; }
+.wg-head-lede {
+  font-family: "IBM Plex Serif", "Songti SC", serif;
+  font-size: 22px; line-height: 1.5; color: var(--ink-2);
+  margin: 16px 0 0; text-wrap: pretty;
+}
+.wg-eyebrow {
+  font-family: "IBM Plex Mono", monospace;
+  font-size: 12px; letter-spacing: 0.14em; text-transform: uppercase;
+  color: var(--brown); font-weight: 500; margin-bottom: 12px;
+}
+.wg-eyebrow-peach { color: #b07a3a; }
+
+.wg-h2 {
+  font-family: "IBM Plex Sans", sans-serif;
+  font-size: 56px; line-height: 1.05; font-weight: 600;
+  letter-spacing: -0.02em; margin: 0; color: var(--brown);
+  text-wrap: balance;
+}
+.wg-h2-ink { color: var(--ink); }
+.wg-h3 {
+  font-family: "IBM Plex Sans", sans-serif;
+  font-size: 30px; line-height: 1.15; font-weight: 600;
+  margin: 0 0 16px; color: var(--ink);
+}
+.wg-h4 {
+  font-size: 18px; font-weight: 600; color: var(--brown); margin: 0 0 8px;
+}
+
+.wagyu mark { background: rgba(248, 184, 122, 0.45); color: var(--ink); padding: 0 3px; border-radius: 2px; }
+.wagyu p { font-size: 15px; line-height: 1.7; color: var(--ink-2); margin: 0 0 16px; }
+
+/* ---------- HERO ---------- */
+.wg-hero {
+  max-width: 1240px; margin: 0 auto; padding: 160px 56px 72px;
+  display: grid; grid-template-columns: 1.1fr 1fr; gap: 48px;
+  align-items: stretch;
+}
+.wg-hero-photo {
+  border-radius: 24px; overflow: hidden;
+  position: relative; min-height: 540px;
+  box-shadow: 0 24px 60px rgba(131, 81, 30, 0.18);
+}
+.wg-hero-photo img {
+  width: 100%; height: 100%; display: block; object-fit: cover;
+}
+.wg-hero-card {
+  background: #fff; border: 1px solid var(--rule); border-radius: 24px;
+  padding: 44px 40px;
+  box-shadow: 0 14px 40px rgba(131, 81, 30, 0.08);
+  display: flex; flex-direction: column;
+}
+.wg-hero-title {
+  font-family: "IBM Plex Sans", sans-serif;
+  font-size: 56px; line-height: 1.05; font-weight: 600;
+  letter-spacing: -0.02em; margin: 12px 0 12px; color: var(--ink);
+}
+.wg-hero-rule {
+  height: 3px; width: 100%; background: var(--peach);
+  border-radius: 2px; margin: 0 0 16px;
+}
+.wg-hero-sub {
+  font-size: 20px; font-weight: 600; color: var(--brown);
+  margin-bottom: 24px;
+}
+.wg-hero-meta {
+  margin: 0 0 24px; padding: 0;
+  font-size: 13px; line-height: 1.55;
+}
+.wg-hero-meta > div { margin-bottom: 8px; }
+.wg-hero-meta dt { display: inline; color: var(--brown); font-weight: 600; margin-right: 8px; }
+.wg-hero-meta dd { display: inline; color: var(--ink-2); margin: 0; }
+.wg-hero-brief {
+  font-size: 14px; line-height: 1.65; color: var(--ink-2); margin: 0;
+  padding-top: 20px; border-top: 1px solid var(--rule);
+}
+.wg-hero-awards {
+  display: flex; gap: 8px; flex-wrap: wrap; margin-top: 20px;
+}
+.wg-award-chip {
+  display: inline-flex; align-items: center; gap: 6px;
+  background: var(--peach-soft); color: var(--brown-deep);
+  border: 1px solid var(--peach);
+  padding: 6px 12px; border-radius: 999px;
+  font-size: 12px; font-weight: 600;
+  font-family: "IBM Plex Mono", monospace;
+}
+
+/* ---------- AT A GLANCE ---------- */
+.wg-glance-grid {
+  display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px;
+}
+.wg-glance-cell {
+  background: #fff; border: 1px solid var(--rule); border-radius: 16px;
+  padding: 28px 24px;
+}
+.wg-glance-cell h3 {
+  font-size: 22px; font-weight: 600; margin: 0 0 10px; color: var(--brown);
+}
+
+/* ---------- CONCEPTUALIZATION ---------- */
+.wg-concept-figure {
+  margin: 0; border-radius: 16px; overflow: hidden;
+  background: #fff; border: 1px solid var(--rule);
+}
+.wg-concept-figure img { width: 100%; display: block; }
+.wg-concept-callouts {
+  display: grid; grid-template-columns: 1fr 1fr; gap: 32px; margin-top: 32px;
+}
+
+/* ---------- MECHANICS ---------- */
+.wg-mech-cards {
+  display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; margin-bottom: 40px;
+}
+.wg-mech-card {
+  background: #fff; border: 1px solid var(--rule); border-radius: 16px;
+  padding: 28px 24px; text-align: center;
+}
+.wg-mech-icon {
+  width: 84px; height: 84px; border-radius: 50%;
+  background: var(--peach-soft); margin: 0 auto 16px;
+  display: flex; align-items: center; justify-content: center;
+}
+.wg-mech-icon svg { width: 44px; height: 44px; color: var(--brown); }
+.wg-mech-card h4 {
+  font-size: 18px; font-weight: 600; color: var(--ink);
+  margin: 0 0 8px;
+}
+.wg-mech-card p {
+  font-size: 14px; line-height: 1.55; color: var(--ink-2);
+  margin: 0;
+}
+.wg-mech-bigtext {
+  display: grid; grid-template-columns: 1fr 1.4fr; gap: 32px; align-items: start;
+}
+.wg-mech-list {
+  background: #fff; border: 1px solid var(--rule); border-radius: 16px;
+  padding: 28px 32px;
+}
+.wg-mech-list-head {
+  font-family: "IBM Plex Mono", monospace;
+  font-size: 14px; color: var(--brown); font-weight: 600;
+  text-transform: uppercase; letter-spacing: 0.08em;
+  margin-bottom: 14px;
+}
+.wg-mech-list ol {
+  margin: 0; padding-left: 0; list-style: none;
+  counter-reset: wglist;
+}
+.wg-mech-list li {
+  counter-increment: wglist;
+  display: grid; grid-template-columns: 32px 1fr; gap: 12px;
+  font-size: 14px; line-height: 1.55; color: var(--ink-2);
+  padding: 8px 0;
+}
+.wg-mech-list li::before {
+  content: counter(wglist) '.';
+  font-family: "IBM Plex Mono", monospace;
+  color: var(--brown); font-weight: 600;
+}
+.wg-mech-list li b { color: var(--ink); font-weight: 600; }
+.wg-mech-foot {
+  font-size: 11px; color: var(--ink-2); margin-top: 16px;
+  text-align: right; font-style: italic;
+}
+
+/* ---------- GAMEPLAY ---------- */
+.wg-gameplay {
+  display: grid; grid-template-columns: 1fr 1.1fr; gap: 48px; align-items: center;
+}
+.wg-gameplay-figure {
+  margin: 0; border-radius: 24px; overflow: hidden;
+  background: var(--peach-soft);
+  border: 1px solid var(--rule);
+}
+.wg-gameplay-figure img { width: 100%; display: block; }
+
+/* ---------- VIEWS / MAP EDITOR ---------- */
+.wg-views-figure {
+  margin: 0; border-radius: 16px; overflow: hidden;
+  background: #fff; border: 1px solid var(--rule);
+}
+.wg-views-figure img { width: 100%; display: block; }
+.wg-views-grid {
+  display: grid; grid-template-columns: 1fr 1fr; gap: 32px; margin-top: 40px;
+}
+
+/* ---------- AESTHETICS ---------- */
+.wg-aesthetics-card {
+  background: #fff; border: 1px solid var(--rule); border-radius: 16px;
+  padding: 28px 32px; margin-bottom: 32px;
+  display: grid; grid-template-columns: 220px 1fr; gap: 32px; align-items: center;
+}
+.wg-aesthetics-figure { margin: 0; border-radius: 16px; overflow: hidden; }
+.wg-aesthetics-figure img { width: 100%; display: block; }
+.wg-swatch-row { display: flex; gap: 10px; margin-top: 16px; flex-wrap: wrap; }
+.wg-swatch {
+  width: 64px; display: flex; flex-direction: column; align-items: center; gap: 4px;
+}
+.wg-swatch-chip {
+  width: 56px; height: 56px; border-radius: 8px; border: 1px solid var(--rule);
+}
+.wg-swatch-hex {
+  font-family: "IBM Plex Mono", monospace;
+  font-size: 10px; color: var(--ink-2); letter-spacing: 0.05em;
+}
+
+/* ---------- AWARD ---------- */
+.wg-award {
+  display: grid; grid-template-columns: 1fr 1.2fr; gap: 48px; align-items: start;
+}
+.wg-award-figure {
+  margin: 0; border-radius: 16px; overflow: hidden;
+  background: #fff; border: 1px solid var(--rule);
+}
+.wg-award-figure img { width: 100%; display: block; }
+.wg-award-meta { font-size: 14px; line-height: 1.6; color: var(--ink-2); }
+.wg-award-meta b { color: var(--ink); font-weight: 600; }
+.wg-award-meta ul { margin: 4px 0 16px 18px; padding: 0; }
+.wg-award-meta li { margin-bottom: 4px; }
+.wg-feedback {
+  background: var(--peach-soft); border: 1px solid var(--peach);
+  border-radius: 16px; padding: 24px 28px; margin-top: 24px;
+}
+.wg-feedback-head {
+  font-family: "IBM Plex Mono", monospace;
+  font-size: 12px; color: var(--brown); font-weight: 600;
+  text-transform: uppercase; letter-spacing: 0.1em; margin-bottom: 8px;
+}
+.wg-feedback-quote {
+  font-family: "IBM Plex Serif", serif;
+  font-size: 15px; line-height: 1.6; color: var(--ink);
+  margin: 0; font-style: italic; position: relative;
+}
+.wg-feedback-quote::before { content: '\201C'; font-size: 28px; color: var(--brown); margin-right: 4px; vertical-align: -8px; }
+.wg-feedback-quote::after { content: '\201D'; font-size: 28px; color: var(--brown); margin-left: 4px; vertical-align: -8px; }
+
+/* ---------- SCREENS gallery ---------- */
+.wg-screens {
+  display: grid; grid-template-columns: 320px 1fr; gap: 48px; align-items: center;
+}
+.wg-screens-copy h2 {
+  font-size: 36px; line-height: 1.1; font-weight: 600;
+  color: var(--brown); margin: 0 0 12px;
+}
+.wg-screens-copy p {
+  font-size: 16px; color: var(--ink-2); margin: 0;
+}
+.wg-screens-figure {
+  margin: 0; border-radius: 16px; overflow: hidden;
+  border: 1px solid var(--rule);
+}
+.wg-screens-figure img { width: 100%; display: block; }
+
+/* ---------- nav ---------- */
+.wg-nav {
+  max-width: 1240px; margin: 56px auto 0; padding: 0 56px;
+  display: flex; justify-content: space-between; align-items: center;
+}
+
+/* ---------- responsive ---------- */
+@media (max-width: 980px) {
+  .wg-hero { grid-template-columns: 1fr; }
+  .wg-hero-photo { min-height: 360px; }
+  .wg-glance-grid, .wg-mech-cards, .wg-views-grid { grid-template-columns: 1fr; }
+  .wg-mech-bigtext, .wg-gameplay, .wg-award, .wg-screens { grid-template-columns: 1fr; gap: 32px; }
+  .wg-aesthetics-card { grid-template-columns: 1fr; }
+  .wg-section { padding: 56px 32px; }
+  .wg-hero { padding: 120px 32px 40px; }
+  .wg-h2 { font-size: 38px; }
+  .wg-hero-title { font-size: 38px; }
+  .wg-concept-callouts { grid-template-columns: 1fr; }
+}

@@ -1,0 +1,536 @@
+/* ============================================================
+   moca.css — bespoke styles for the MoCA Taipei case study.
+   Palette: cream #EBE7D6 · amber #EEB94D · navy #364F92
+   ============================================================ */
+
+.moca {
+  --cream: #EBE7D6;
+  --cream-deep: #e0d9bd;
+  --amber: #EEB94D;
+  --amber-deep: #e0a93a;
+  --navy: #364F92;
+  --navy-deep: #2a3f77;
+  --ink: #1f1f1f;
+  --ink-2: #525252;
+  --rule: rgba(54, 79, 146, 0.14);
+
+  background: var(--cream);
+  color: var(--ink);
+  font-family: var(--font-sans, "IBM Plex Sans", system-ui, sans-serif);
+  display: block;
+  padding-bottom: 80px;
+}
+
+/* Dark-theme: preserve amber/navy but soften cream into a warm dark */
+[data-theme="dark"] .moca {
+  --cream: #24221c;
+  --cream-deep: #1b1a15;
+  --ink: #f4f4f4;
+  --ink-2: #c6c6c6;
+  --rule: rgba(238, 185, 77, 0.22);
+}
+[data-theme="dark"] .moca .moca-hero-card,
+[data-theme="dark"] .moca .moca-swot-card,
+[data-theme="dark"] .moca .moca-pov-card,
+[data-theme="dark"] .moca .moca-feedback-card,
+[data-theme="dark"] .moca .moca-feature,
+[data-theme="dark"] .moca .moca-fb,
+[data-theme="dark"] .moca .moca-evidence-card,
+[data-theme="dark"] .moca .moca-glance-cell,
+[data-theme="dark"] .moca .moca-discover-objective,
+[data-theme="dark"] .moca .moca-strategy {
+  background: #2e2b23;
+  border-color: var(--rule);
+}
+[data-theme="dark"] .moca mark { background: rgba(238, 185, 77, 0.28); color: var(--amber); }
+[data-theme="dark"] .moca .moca-font-row { background: #2e2b23; border-color: var(--rule); }
+
+/* ---------- crumb ---------- */
+.moca-crumb {
+  position: sticky; top: 64px; z-index: 10;
+  background: var(--cream);
+  border-bottom: 1px solid var(--rule);
+  padding: 14px 0;
+}
+.moca-crumb-inner {
+  max-width: 1240px; margin: 0 auto; padding: 0 56px;
+  display: flex; align-items: center; gap: 10px;
+  font-size: 13px; font-family: "IBM Plex Mono", monospace;
+  color: var(--ink-2);
+}
+.moca-crumb-inner button {
+  background: none; border: 0; cursor: pointer; color: var(--navy);
+  font: inherit; padding: 0;
+}
+.moca-crumb-inner button:hover { text-decoration: underline; }
+.moca-crumb-sep { opacity: 0.4; }
+.moca-crumb-cn { color: var(--ink); font-weight: 500; letter-spacing: 0.06em; }
+.moca-crumb-spacer { flex: 1; }
+.moca-crumb-meta { font-size: 12px; opacity: 0.7; }
+
+/* ---------- layout shell ---------- */
+.moca-section {
+  max-width: 1240px; margin: 0 auto; padding: 88px 56px;
+  border-bottom: 1px solid var(--rule);
+}
+.moca-head { max-width: 820px; margin-bottom: 48px; }
+.moca-head-lede {
+  font-family: "IBM Plex Serif", "Songti SC", serif;
+  font-size: 22px; line-height: 1.5; color: var(--ink-2);
+  margin: 16px 0 0; text-wrap: pretty;
+}
+.moca-eyebrow {
+  font-family: "IBM Plex Mono", monospace;
+  font-size: 12px; letter-spacing: 0.14em; text-transform: uppercase;
+  color: var(--navy); font-weight: 500; margin-bottom: 12px;
+}
+.moca-eyebrow-amber { color: var(--amber-deep); }
+.moca-eyebrow-navy  { color: var(--navy); }
+
+.moca-h2 {
+  font-family: "IBM Plex Sans", sans-serif;
+  font-size: 48px; line-height: 1.08; font-weight: 600;
+  letter-spacing: -0.02em; margin: 0; color: var(--ink);
+  text-wrap: balance;
+}
+.moca-h2-navy { color: var(--navy); }
+.moca-h3 {
+  font-family: "IBM Plex Sans", sans-serif;
+  font-size: 32px; line-height: 1.15; font-weight: 600;
+  margin: 0 0 16px; color: var(--ink);
+}
+.moca-sub {
+  font-family: "IBM Plex Sans", sans-serif;
+  font-size: 22px; font-weight: 500; margin: 48px 0 24px;
+  color: var(--navy);
+}
+.moca-h4-amber {
+  font-family: "IBM Plex Sans", sans-serif;
+  font-size: 18px; font-weight: 600; color: var(--amber-deep);
+  margin: 22px 0 8px;
+}
+.moca mark {
+  background: rgba(238, 185, 77, 0.35);
+  color: inherit; padding: 0 2px; border-radius: 2px;
+}
+
+/* ---------- hero ---------- */
+.moca-hero {
+  max-width: 1240px; margin: 0 auto; padding: 56px 56px 48px;
+  display: grid; grid-template-columns: 1.3fr 1fr; gap: 32px;
+}
+.moca-hero-photo {
+  position: relative; border-radius: 12px; overflow: hidden;
+  aspect-ratio: 4 / 3; background: #1a1a1a;
+  box-shadow: 0 20px 60px rgba(54,79,146,0.25);
+}
+.moca-hero-photo img { width: 100%; height: 100%; object-fit: cover; }
+.moca-hero-logo {
+  position: absolute; top: 24px; left: 24px;
+  background: rgba(0,0,0,0.35); backdrop-filter: blur(6px);
+  padding: 8px 14px; border-radius: 6px;
+}
+.moca-hero-logo img {
+  display: block; height: 28px; width: auto;
+}
+.moca-hero-wordmark {
+  position: absolute; left: 32px; bottom: 32px;
+  filter: drop-shadow(0 4px 16px rgba(0,0,0,0.5));
+}
+.moca-hero-wordmark img {
+  display: block; width: 360px; height: auto;
+}
+
+.moca-hero-card {
+  background: #fff;
+  border-radius: 14px; padding: 36px 32px;
+  align-self: end;
+  box-shadow: 0 20px 40px -20px rgba(54,79,146,0.2);
+  border: 1px solid var(--rule);
+}
+[data-theme="dark"] .moca-hero-card { background: #2e2b23; }
+.moca-hero-title {
+  font-family: "IBM Plex Sans", sans-serif;
+  font-size: 40px; font-weight: 600; margin: 8px 0 0; letter-spacing: -0.01em;
+  color: var(--navy);
+}
+.moca-hero-rule {
+  width: 48px; height: 3px; background: var(--amber); margin: 16px 0;
+  border-radius: 2px;
+}
+.moca-hero-sub {
+  font-family: "IBM Plex Serif", serif; font-size: 17px; line-height: 1.4;
+  color: var(--ink-2); margin-bottom: 24px;
+}
+.moca-hero-meta { display: grid; gap: 10px; margin: 0 0 22px; }
+.moca-hero-meta > div {
+  display: grid; grid-template-columns: 86px 1fr; gap: 14px;
+  font-size: 13px; line-height: 1.4;
+}
+.moca-hero-meta dt {
+  font-family: "IBM Plex Mono", monospace; font-size: 10px;
+  letter-spacing: 0.14em; text-transform: uppercase; color: var(--ink-2);
+  padding-top: 2px; margin: 0;
+}
+.moca-hero-meta dd { margin: 0; color: var(--ink); }
+.moca-hero-brief {
+  font-size: 14px; line-height: 1.55; color: var(--ink-2); margin: 0 0 22px;
+  padding-top: 16px; border-top: 1px dashed var(--rule);
+}
+.moca-hero-award {
+  display: flex; align-items: center; gap: 12px;
+  padding: 12px 14px; border: 1px solid var(--amber);
+  border-radius: 8px; background: rgba(238,185,77,0.12);
+  font-size: 13px; line-height: 1.35;
+}
+.moca-award-ribbon {
+  font-weight: 600; white-space: nowrap; color: var(--amber-deep);
+}
+
+/* ---------- at-a-glance ---------- */
+.moca-glance { padding-top: 64px; }
+.moca-glance-grid {
+  display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px;
+}
+.moca-glance-cell {
+  background: #fff; border-radius: 12px; padding: 28px;
+  border: 1px solid var(--rule);
+}
+[data-theme="dark"] .moca-glance-cell { background: #2e2b23; }
+.moca-glance-cell h3 {
+  font-size: 22px; font-weight: 600; margin: 0 0 8px; line-height: 1.2;
+  color: var(--navy);
+}
+[data-theme="dark"] .moca-glance-cell h3 { color: var(--amber); }
+.moca-glance-cell p {
+  font-size: 14px; line-height: 1.55; color: var(--ink-2); margin: 0;
+}
+
+/* ---------- double diamond ---------- */
+.moca-dd {
+  display: grid; grid-template-columns: 1fr 1fr; gap: 48px;
+  padding: 24px 0 32px;
+}
+.moca-dd-phase { position: relative; }
+.moca-dd-phase-label {
+  display: flex; align-items: baseline; gap: 12px; margin-bottom: 20px;
+  font-family: "IBM Plex Mono", monospace;
+}
+.moca-dd-phase-num {
+  font-size: 40px; font-weight: 300; color: var(--navy);
+  letter-spacing: -0.02em;
+}
+.moca-dd-phase-num-amber { color: var(--amber-deep); }
+.moca-dd-phase-name {
+  font-size: 14px; letter-spacing: 0.2em; text-transform: uppercase;
+  color: var(--ink-2);
+}
+.moca-dd-diamonds {
+  display: grid; grid-template-columns: 1fr 1fr; gap: 28px;
+  align-items: center;
+}
+.moca-diamond {
+  position: relative; aspect-ratio: 1 / 1.35; max-width: 200px; margin: 0 auto;
+}
+.moca-diamond-svg {
+  position: absolute; inset: 0; width: 100%; height: 100%;
+}
+.moca-diamond-content {
+  position: relative; z-index: 1; height: 100%;
+  display: flex; flex-direction: column; justify-content: center;
+  padding: 0 22px; text-align: center;
+}
+.moca-diamond-title {
+  font-weight: 600; font-size: 16px; color: var(--dc);
+  margin-bottom: 8px;
+}
+.moca-diamond ul { list-style: none; padding: 0; margin: 0; }
+.moca-diamond li {
+  font-size: 11px; line-height: 1.5; color: var(--ink-2);
+  font-family: "IBM Plex Mono", monospace;
+}
+.moca-phase-notes {
+  display: grid; grid-template-columns: 1fr 1fr; gap: 48px;
+  padding-top: 32px; border-top: 1px solid var(--rule);
+}
+.moca-phase-notes p { font-size: 14px; line-height: 1.6; color: var(--ink-2); margin: 8px 0 0; }
+
+/* ---------- discover / SWOT ---------- */
+.moca-discover-grid {
+  display: grid; grid-template-columns: 1fr 1.1fr; gap: 48px;
+  align-items: start;
+}
+.moca-discover-grid p { font-size: 14px; line-height: 1.6; color: var(--ink-2); }
+.moca-swot {
+  display: grid; grid-template-columns: 1fr 1fr; gap: 16px;
+}
+.moca-swot-card {
+  background: #fff; border: 1px solid var(--rule); border-radius: 10px;
+  padding: 20px;
+}
+[data-theme="dark"] .moca-swot-card { background: #2e2b23; }
+.moca-swot-head { display: flex; align-items: baseline; gap: 2px; margin-bottom: 10px; }
+.moca-swot-letter {
+  font-size: 36px; font-weight: 700; color: var(--navy); line-height: 1;
+  font-family: "IBM Plex Sans", sans-serif;
+}
+.moca-swot-rest {
+  font-size: 13px; color: var(--ink-2); text-transform: uppercase;
+  letter-spacing: 0.1em;
+}
+.moca-swot-card ul { list-style: none; padding: 0; margin: 0; }
+.moca-swot-card li {
+  font-size: 13px; line-height: 1.55; color: var(--ink-2);
+  padding-left: 14px; position: relative;
+}
+.moca-swot-card li::before {
+  content: ''; position: absolute; left: 0; top: 8px;
+  width: 6px; height: 6px; border-radius: 50%; background: var(--amber);
+}
+
+.moca-discover-objective {
+  margin-top: 40px; background: #fff; border: 1px solid var(--rule);
+  border-radius: 12px; padding: 28px 32px;
+  display: grid; grid-template-columns: 1fr 1.2fr; gap: 40px;
+  align-items: start;
+}
+[data-theme="dark"] .moca-discover-objective { background: #2e2b23; }
+.moca-discover-objective h4 {
+  font-size: 20px; margin: 0 0 8px; color: var(--navy); font-weight: 600;
+}
+.moca-discover-objective p { font-size: 14px; line-height: 1.55; color: var(--ink-2); margin: 0; }
+.moca-obj-split { display: grid; grid-template-columns: 1fr 1fr; gap: 28px; }
+
+/* ---------- figure (PDF crops) ---------- */
+.moca-figure {
+  margin: 0; background: transparent;
+}
+.moca-figure img {
+  display: block; width: 100%; height: auto;
+  border-radius: 14px;
+}
+.moca-figure figcaption {
+  margin-top: 10px; font-family: "IBM Plex Mono", monospace;
+  font-size: 11px; color: var(--ink-3, var(--ink-2));
+  letter-spacing: 0.04em; text-align: center;
+}
+.moca-figure-empathy img { max-width: 860px; margin: 0 auto; }
+.moca-figure-cycle img { max-width: 420px; margin: 0 auto; }
+.moca-figure-visual img { max-width: 720px; margin: 0 auto; }
+.moca-figure-cjm { margin-bottom: 32px; }
+.moca-figure-cjm img { border: 1px solid var(--rule); }
+
+/* persona + cycle layout */
+.moca-cycle-wrap {
+  display: grid; grid-template-columns: 1fr 1.2fr; gap: 48px; align-items: center;
+  margin-top: 48px;
+}
+.moca-cycle-copy h3 {
+  font-size: 24px; margin: 6px 0 14px; color: var(--navy); font-weight: 600;
+}
+.moca-cycle-copy p {
+  font-size: 15px; line-height: 1.65; color: var(--ink-2); margin: 0;
+}
+.moca-cycle-copy mark {
+  background: linear-gradient(transparent 60%, rgba(238, 185, 77, 0.38) 60%);
+  color: inherit; padding: 0 2px;
+}
+
+/* ---------- key insights ---------- */
+.moca-insights {
+  padding-top: 56px; padding-bottom: 72px; border-bottom: 1px solid var(--rule);
+}
+.moca-insight-list {
+  list-style: none; padding: 0; margin: 16px 0 0;
+  display: grid; gap: 18px; max-width: 900px;
+  counter-reset: insight;
+}
+.moca-insight-list li {
+  position: relative; padding: 20px 24px 20px 72px;
+  background: #fff; border-radius: 10px; border: 1px solid var(--rule);
+  counter-increment: insight;
+  font-family: "IBM Plex Serif", serif; font-size: 18px; line-height: 1.45;
+  color: var(--ink);
+}
+[data-theme="dark"] .moca-insight-list li { background: #2e2b23; }
+.moca-insight-list li::before {
+  content: counter(insight, decimal-leading-zero);
+  position: absolute; left: 24px; top: 20px;
+  font-family: "IBM Plex Mono", monospace; font-size: 28px;
+  color: var(--amber); font-weight: 300;
+}
+
+.moca-pain-gain {
+  margin-top: 40px; display: grid; grid-template-columns: 1fr 1fr; gap: 16px;
+  max-width: 820px;
+}
+.moca-pg {
+  padding: 16px 20px; border-radius: 10px; background: #fff;
+  border: 1px solid var(--rule);
+}
+[data-theme="dark"] .moca-pg { background: #2e2b23; }
+.moca-pg p { margin: 4px 0 0; font-size: 15px; color: var(--ink); }
+
+/* ---------- pov ---------- */
+.moca-pov-cards {
+  display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px;
+}
+.moca-pov-card {
+  background: #fff; border: 1px solid var(--rule); border-radius: 14px;
+  padding: 28px; position: relative;
+}
+[data-theme="dark"] .moca-pov-card { background: #2e2b23; }
+.moca-pov-tag {
+  display: inline-block; font-family: "IBM Plex Mono", monospace;
+  font-size: 11px; letter-spacing: 0.1em; text-transform: uppercase;
+  padding: 4px 10px; border-radius: 999px;
+  background: var(--amber); color: #000; margin-bottom: 16px;
+}
+.moca-pov-icon {
+  width: 56px; height: 56px; border-radius: 12px; background: var(--cream-deep);
+  display: flex; align-items: center; justify-content: center;
+  margin-bottom: 16px;
+}
+[data-theme="dark"] .moca-pov-icon { background: #1b1a15; }
+.moca-pov-card h4 { font-size: 19px; margin: 0 0 8px; color: var(--navy); font-weight: 600; }
+[data-theme="dark"] .moca-pov-card h4 { color: var(--amber); }
+.moca-pov-card p { font-size: 14px; line-height: 1.5; color: var(--ink-2); margin: 0; }
+
+/* ---------- deliver ---------- */
+.moca-strategy {
+  background: #fff; border: 1px solid var(--rule); border-radius: 14px;
+  padding: 28px; margin-top: 24px;
+}
+[data-theme="dark"] .moca-strategy { background: #2e2b23; }
+.moca-strategy p { font-size: 14px; line-height: 1.6; color: var(--ink-2); margin: 0 0 16px; }
+.moca-arrow {
+  display: grid; grid-template-columns: 1fr auto 1fr; gap: 16px;
+  align-items: center;
+  padding: 18px; background: var(--cream-deep); border-radius: 8px;
+  font-size: 14px; line-height: 1.4;
+}
+[data-theme="dark"] .moca-arrow { background: #1b1a15; }
+.moca-arrow-from { color: var(--ink-2); }
+.moca-arrow-to   { color: var(--navy); font-weight: 500; }
+[data-theme="dark"] .moca-arrow-to { color: var(--amber); }
+.moca-arrow-line {
+  color: var(--amber); font-weight: 700; font-size: 22px;
+}
+
+.moca-features {
+  display: grid; grid-template-columns: 1fr 1fr; gap: 16px;
+}
+.moca-feature {
+  background: #fff; border: 1px solid var(--rule); border-radius: 12px;
+  padding: 20px 22px;
+  display: grid; grid-template-columns: auto 1fr; gap: 18px; align-items: start;
+}
+[data-theme="dark"] .moca-feature { background: #2e2b23; }
+.moca-feature-icon {
+  width: 56px; height: 56px; border-radius: 50%;
+  background: var(--cream-deep);
+  display: flex; align-items: center; justify-content: center; flex: 0 0 auto;
+}
+[data-theme="dark"] .moca-feature-icon { background: #1b1a15; }
+.moca-feature h5 {
+  font-size: 16px; font-weight: 600; color: var(--navy);
+  margin: 2px 0 6px;
+}
+[data-theme="dark"] .moca-feature h5 { color: var(--amber); }
+.moca-feature p { font-size: 13px; line-height: 1.55; color: var(--ink-2); margin: 0; }
+
+/* ---------- visual ---------- */
+.moca-visual { padding: 0; background: transparent; border: 0; }
+.moca-visual .moca-head { margin-bottom: 32px; }
+
+/* ---------- testing ---------- */
+.moca-testing-grid {
+  display: grid; grid-template-columns: 1fr 1fr; gap: 48px;
+  align-items: start;
+}
+.moca-testing-grid p { font-size: 14px; line-height: 1.6; color: var(--ink-2); }
+.moca-feedback-card {
+  background: #fff; border: 1px solid var(--rule); border-radius: 14px;
+  padding: 16px; display: grid; gap: 8px;
+}
+[data-theme="dark"] .moca-feedback-card { background: #2e2b23; }
+.moca-fb {
+  padding: 14px 12px; display: grid; grid-template-columns: auto 1fr;
+  gap: 16px; align-items: start;
+}
+.moca-fb + .moca-fb { border-top: 1px dashed var(--rule); }
+.moca-fb h6 {
+  font-size: 14px; font-weight: 600; color: var(--navy); margin: 2px 0 4px;
+}
+[data-theme="dark"] .moca-fb h6 { color: var(--amber); }
+.moca-fb p { font-size: 12.5px; line-height: 1.5; color: var(--ink-2); margin: 0; }
+
+.moca-staff-quote {
+  margin: 16px 0 0; padding: 20px 24px; font-family: "IBM Plex Serif", serif;
+  background: var(--cream-deep); border-radius: 10px; font-size: 15px;
+  line-height: 1.5; color: var(--ink); border-left: 3px solid var(--amber);
+}
+[data-theme="dark"] .moca-staff-quote { background: #1b1a15; }
+
+.moca-goals-split {
+  display: grid; grid-template-columns: 1fr 1fr; gap: 28px; margin: 20px 0 28px;
+}
+.moca-goals-split ol { margin: 0; padding-left: 20px; }
+.moca-goals-split li { font-size: 13px; line-height: 1.7; color: var(--ink-2); }
+.moca-evidence {
+  display: grid;
+  grid-template-columns: 1.4fr 1fr;
+  gap: 12px;
+}
+.moca-evidence-left {
+  display: grid; grid-template-rows: auto auto; gap: 12px;
+}
+.moca-evidence-card {
+  background: #fff; border: 1px solid var(--rule); border-radius: 10px;
+  padding: 12px; overflow: hidden;
+  display: flex; flex-direction: column;
+}
+[data-theme="dark"] .moca-evidence-card { background: #2e2b23; }
+.moca-evidence-card.moca-evidence-award {
+  align-items: stretch;
+}
+.moca-evidence-card.moca-evidence-award img {
+  flex: 1; object-fit: contain; max-height: 100%;
+  background: var(--cream-deep); border-radius: 6px;
+}
+.moca-evidence-label {
+  font-family: "IBM Plex Mono", monospace; font-size: 11px;
+  color: var(--amber-deep); letter-spacing: 0.08em; margin-bottom: 8px;
+}
+.moca-evidence-card img {
+  width: 100%; height: auto; display: block; border-radius: 6px;
+  object-fit: cover;
+}
+/* ---------- nav footer ---------- */
+.moca-nav {
+  max-width: 1240px; margin: 0 auto; padding: 48px 56px 0;
+  display: flex; justify-content: space-between; gap: 16px;
+}
+.moca-nav .btn { font-family: "IBM Plex Sans", sans-serif; }
+.moca-nav .btn-icon img {
+  width: 16px; height: 16px; margin-left: 8px; vertical-align: middle;
+}
+
+/* ---------- responsive ---------- */
+@media (max-width: 1080px) {
+  .moca-section, .moca-hero, .moca-crumb-inner, .moca-nav { padding-left: 32px; padding-right: 32px; }
+  .moca-hero { grid-template-columns: 1fr; }
+  .moca-glance-grid { grid-template-columns: 1fr; }
+  .moca-dd { grid-template-columns: 1fr; gap: 24px; }
+  .moca-phase-notes { grid-template-columns: 1fr; gap: 24px; }
+  .moca-discover-grid { grid-template-columns: 1fr; gap: 32px; }
+  .moca-discover-objective { grid-template-columns: 1fr; gap: 20px; }
+  .moca-obj-split { grid-template-columns: 1fr; gap: 16px; }
+  .moca-cycle-wrap { grid-template-columns: 1fr; gap: 24px; }
+  .moca-swot { grid-template-columns: 1fr 1fr; }
+  .moca-pov-cards { grid-template-columns: 1fr; }
+  .moca-features { grid-template-columns: 1fr; }
+  .moca-testing-grid { grid-template-columns: 1fr; gap: 32px; }
+  .moca-h2 { font-size: 36px; }
+  .moca-hero-title { font-size: 30px; }
+}

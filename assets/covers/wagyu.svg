@@ -1,0 +1,59 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 720" preserveAspectRatio="xMidYMid slice" shape-rendering="crispEdges">
+  
+  <rect width="600" height="720" fill="#E4E1DC"></rect>
+  
+  <g fill="#D0D5ED" opacity=".55">
+    <rect x="0" y="560" width="600" height="160"></rect>
+  </g>
+  
+  <g>
+    
+    <g transform="translate(90 200)">
+      
+      <rect x="0" y="0" width="70" height="70" fill="#83511E"></rect>
+      <rect x="70" y="0" width="70" height="70" fill="#83511E"></rect>
+      <rect x="140" y="0" width="70" height="70" fill="#E4E1DC" stroke="#83511E" stroke-width="4"></rect>
+      <rect x="210" y="0" width="70" height="70" fill="#E4E1DC" stroke="#83511E" stroke-width="4"></rect>
+      <rect x="280" y="0" width="70" height="70" fill="#83511E"></rect>
+      <rect x="350" y="0" width="70" height="70" fill="#83511E"></rect>
+
+      <rect x="0" y="70" width="70" height="70" fill="#E4E1DC" stroke="#83511E" stroke-width="4"></rect>
+      <rect x="70" y="70" width="70" height="70" fill="#E4E1DC" stroke="#83511E" stroke-width="4"></rect>
+      <rect x="140" y="70" width="70" height="70" fill="#83511E"></rect>
+      <rect x="210" y="70" width="70" height="70" fill="#E4E1DC" stroke="#83511E" stroke-width="4"></rect>
+      <rect x="280" y="70" width="70" height="70" fill="#E4E1DC" stroke="#83511E" stroke-width="4"></rect>
+      <rect x="350" y="70" width="70" height="70" fill="#83511E"></rect>
+
+      <rect x="0" y="140" width="70" height="70" fill="#83511E"></rect>
+      <rect x="70" y="140" width="70" height="70" fill="#E4E1DC" stroke="#83511E" stroke-width="4"></rect>
+      <rect x="140" y="140" width="70" height="70" fill="#E4E1DC" stroke="#83511E" stroke-width="4"></rect>
+      <rect x="210" y="140" width="70" height="70" fill="#E4E1DC" stroke="#83511E" stroke-width="4"></rect>
+      <rect x="280" y="140" width="70" height="70" fill="#83511E"></rect>
+      <rect x="350" y="140" width="70" height="70" fill="#83511E"></rect>
+    </g>
+  </g>
+  
+  <g transform="translate(230 400)">
+    
+    <rect x="0" y="20" width="160" height="80" fill="#FFFFFF"></rect>
+    <rect x="30" y="30" width="40" height="30" fill="#1c1c1c"></rect>
+    <rect x="100" y="60" width="30" height="20" fill="#1c1c1c"></rect>
+    
+    <rect x="140" y="0" width="60" height="60" fill="#FFFFFF"></rect>
+    
+    <rect x="140" y="-16" width="8" height="16" fill="#83511E"></rect>
+    <rect x="192" y="-16" width="8" height="16" fill="#83511E"></rect>
+    
+    <rect x="170" y="18" width="8" height="8" fill="#1c1c1c"></rect>
+    
+    <rect x="180" y="40" width="14" height="10" fill="#FFC341"></rect>
+    
+    <rect x="10" y="100" width="18" height="36" fill="#1c1c1c"></rect>
+    <rect x="44" y="100" width="18" height="36" fill="#1c1c1c"></rect>
+    <rect x="100" y="100" width="18" height="36" fill="#1c1c1c"></rect>
+    <rect x="134" y="100" width="18" height="36" fill="#1c1c1c"></rect>
+  </g>
+  <g font-family="&#39;IBM Plex Mono&#39;, monospace" fill="#83511E">
+    <text x="60" y="50" font-size="16" letter-spacing="2">03 / GAME DESIGN</text>
+  </g>
+</svg>

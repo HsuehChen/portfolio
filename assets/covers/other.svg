@@ -1,0 +1,60 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 720" preserveAspectRatio="xMidYMid slice">
+  
+  <rect width="600" height="720" fill="#f4f4f4"></rect>
+  <g>
+    
+    <g transform="translate(60 120)">
+      
+      <rect x="0" y="0" width="150" height="180" fill="#161616"></rect>
+      <g transform="translate(30 30)" stroke="#FFC341" stroke-width="4" fill="none">
+        <circle cx="45" cy="70" r="34"></circle>
+        <circle cx="45" cy="70" r="18"></circle>
+        <path d="M10 30 L40 30 L50 60" stroke-linecap="round"></path>
+      </g>
+      
+      <rect x="165" y="0" width="150" height="180" fill="#262626"></rect>
+      <g transform="translate(200 40)" fill="#FFC341">
+        <path d="M40 0 A40 40 0 1 0 80 40 A30 30 0 0 1 40 0 Z"></path>
+        <circle cx="10" cy="80" r="3"></circle>
+        <circle cx="70" cy="95" r="3"></circle>
+        <circle cx="30" cy="100" r="3"></circle>
+      </g>
+      
+      <rect x="330" y="0" width="150" height="180" fill="#f4f4f4" stroke="#161616" stroke-width="2"></rect>
+      <g transform="translate(405 90)" stroke="#161616" fill="none">
+        <circle r="50" stroke-width="2"></circle>
+        <circle r="50" stroke-width="2" stroke-dasharray="4 6" opacity=".4" transform="translate(6 4)"></circle>
+        <line x1="0" y1="0" x2="0" y2="-36" stroke-width="3"></line>
+        <line x1="0" y1="0" x2="28" y2="10" stroke-width="3"></line>
+        <circle r="3" fill="#161616"></circle>
+      </g>
+      
+      <rect x="0" y="195" width="150" height="180" fill="#FFC341"></rect>
+      <g stroke="#161616" fill="none" stroke-width="3" stroke-linecap="round">
+        <path d="M20 270 Q50 240 80 270 T 140 270"></path>
+        <path d="M20 300 Q50 270 80 300 T 140 300"></path>
+        <path d="M20 330 Q50 300 80 330 T 140 330"></path>
+      </g>
+      
+      <rect x="165" y="195" width="150" height="180" fill="#f4f4f4" stroke="#161616" stroke-width="2"></rect>
+      <g transform="translate(185 240)" font-family="&#39;IBM Plex Serif&#39;, serif" fill="#161616">
+        <text font-size="44" font-weight="400">warm</text>
+        <text y="48" font-size="44" font-weight="400">up.</text>
+      </g>
+      
+      <rect x="330" y="195" width="150" height="180" fill="#161616"></rect>
+      <g transform="translate(350 240)" stroke="#FFC341" fill="none" stroke-width="3">
+        <path d="M0 60 L30 20 L50 40 L80 10 L110 50"></path>
+        <circle cx="110" cy="50" r="3" fill="#FFC341"></circle>
+      </g>
+    </g>
+  </g>
+  <g font-family="&#39;IBM Plex Mono&#39;, monospace" fill="#161616">
+    <text x="60" y="50" font-size="16" letter-spacing="2">04 / OTHER WORKS</text>
+  </g>
+  <g font-family="&#39;IBM Plex Sans&#39;, sans-serif" fill="#161616">
+    <text x="60" y="600" font-size="34" font-weight="300">Six explorations</text>
+    <text x="60" y="640" font-size="34" font-weight="300">in accessibility,</text>
+    <text x="60" y="680" font-size="34" font-weight="300">code &amp; brand.</text>
+  </g>
+</svg>

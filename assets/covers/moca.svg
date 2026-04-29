@@ -1,0 +1,38 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 720" preserveAspectRatio="xMidYMid slice">
+  
+  <rect width="600" height="720" fill="#EBE7D6"></rect>
+  
+  <g stroke="#364F92" stroke-width="6" fill="none" stroke-linecap="round" stroke-linejoin="round">
+    <path d="M60 70 Q 70 60 300 62 T 540 70 L 546 640 Q 540 660 300 658 T 58 652 Z"></path>
+  </g>
+  
+  <circle cx="470" cy="170" r="62" fill="#EEB94D"></circle>
+  <g stroke="#364F92" stroke-width="5" stroke-linecap="round">
+    <line x1="470" y1="60" x2="470" y2="92"></line>
+    <line x1="470" y1="248" x2="470" y2="280"></line>
+    <line x1="360" y1="170" x2="392" y2="170"></line>
+    <line x1="548" y1="170" x2="580" y2="170"></line>
+    <line x1="395" y1="95" x2="418" y2="118"></line>
+    <line x1="522" y1="222" x2="545" y2="245"></line>
+    <line x1="395" y1="245" x2="418" y2="222"></line>
+    <line x1="522" y1="118" x2="545" y2="95"></line>
+  </g>
+  
+  <g>
+    <rect x="120" y="380" width="360" height="220" fill="#FFFFFF" stroke="#364F92" stroke-width="5"></rect>
+    <polygon points="100,380 300,270 500,380" fill="#364F92"></polygon>
+    <rect x="160" y="440" width="60" height="120" fill="#EEB94D" stroke="#364F92" stroke-width="4"></rect>
+    <rect x="270" y="440" width="60" height="160" fill="#EBE7D6" stroke="#364F92" stroke-width="4"></rect>
+    <rect x="380" y="440" width="60" height="100" fill="#364F92"></rect>
+    
+    <rect x="392" y="452" width="16" height="16" fill="#EEB94D"></rect>
+    <rect x="414" y="452" width="16" height="16" fill="#EEB94D"></rect>
+    
+    <rect x="120" y="600" width="360" height="12" fill="#364F92"></rect>
+    <rect x="100" y="612" width="400" height="14" fill="#364F92" opacity=".8"></rect>
+  </g>
+  
+  <g font-family="&#39;IBM Plex Mono&#39;, monospace" fill="#364F92">
+    <text x="60" y="50" font-size="16" letter-spacing="2">01 / SERVICE DESIGN</text>
+  </g>
+</svg>

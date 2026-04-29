@@ -1,0 +1,29 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 500 600" width="500" height="600">
+  <rect width="500" height="600" fill="#F9F9F9"></rect>
+  
+  <g stroke-width="6" stroke-linecap="square" fill="none">
+    <line x1="30" y1="100" x2="470" y2="100" stroke="#0079A9"></line>
+    <line x1="30" y1="180" x2="470" y2="180" stroke="#4D2161"></line>
+    <line x1="30" y1="260" x2="470" y2="260" stroke="#E0A41F"></line>
+    <line x1="30" y1="340" x2="470" y2="340" stroke="#C54E2C"></line>
+  </g>
+  <g fill="#FFFFFF" stroke="#333" stroke-width="2">
+    <circle cx="130" cy="100" r="8"></circle>
+    <circle cx="260" cy="180" r="8"></circle>
+    <circle cx="370" cy="100" r="8"></circle>
+    <circle cx="180" cy="260" r="8"></circle>
+    <circle cx="360" cy="340" r="8"></circle>
+    <circle cx="100" cy="340" r="8"></circle>
+  </g>
+  
+  <g transform="translate(60 410)">
+    <rect x="0" y="0" width="380" height="78" rx="39" fill="#19191B"></rect>
+    <text x="36" y="52" font-family="&#39;Poppins&#39;, &#39;IBM Plex Sans&#39;, sans-serif" font-weight="700" font-size="38" fill="#FFFFFF" letter-spacing="-1">Tap</text>
+    <rect x="138" y="14" width="50" height="50" rx="25" fill="#E0A41F"></rect>
+    <text x="200" y="52" font-family="&#39;Poppins&#39;, &#39;IBM Plex Sans&#39;, sans-serif" font-weight="700" font-size="38" fill="#FFFFFF" letter-spacing="-1">Taipei</text>
+  </g>
+  <g font-family="&#39;IBM Plex Sans&#39;, sans-serif" fill="#333">
+    <text x="60" y="540" font-size="22" font-weight="400">Taipei Metro App</text>
+    <text x="60" y="570" font-size="22" font-weight="400">redesign · 2025</text>
+  </g>
+</svg>

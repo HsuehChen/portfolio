@@ -1,0 +1,137 @@
+/* TapTaipei case study — flat image stack with sticky breadcrumb chrome.
+   The provided "Frame …" images already include all typography, layout and
+   colour. We just frame them with a small page header + footer + spacing. */
+
+.taptaipei {
+  --mrt-blue: #0079A9;
+  --paper: #ffffff;
+  --paper-2: #f4f6f8;
+  --ink: #1f1f1f;
+  --ink-2: #525252;
+  --rule: rgba(0, 121, 169, 0.18);
+
+  background: var(--paper);
+  color: var(--ink);
+  font-family: var(--font-sans, "IBM Plex Sans", system-ui, sans-serif);
+  display: block;
+}
+
+[data-theme="dark"] .taptaipei {
+  --paper: #0f1418;
+  --paper-2: #161c22;
+  --ink: #f4f4f4;
+  --ink-2: #c6c6c6;
+  --rule: rgba(120, 200, 240, 0.22);
+}
+
+/* ---------- sticky breadcrumb (matches MoCA / ShareIt / Wagyu) ---------- */
+.tt-crumb {
+  position: sticky; top: 64px; z-index: 10;
+  background: var(--paper);
+  border-bottom: 1px solid var(--rule);
+  padding: 14px 0;
+}
+.tt-crumb-inner {
+  max-width: 1100px; margin: 0 auto; padding: 0 32px;
+  display: flex; align-items: center; gap: 10px;
+  font-size: 13px; font-family: "IBM Plex Mono", monospace;
+  color: var(--ink-2);
+}
+.tt-crumb-inner button {
+  background: none; border: 0; padding: 0; cursor: pointer;
+  font: inherit; color: var(--ink-2);
+}
+.tt-crumb-inner button:hover { text-decoration: underline; }
+.tt-crumb-sep { opacity: 0.4; }
+.tt-crumb-cn  { color: var(--ink); font-weight: 500; letter-spacing: 0.06em; }
+.tt-crumb-spacer { flex: 1; }
+.tt-crumb-meta { font-size: 12px; opacity: 0.7; }
+
+/* ---------- image stack ---------- */
+.tt-stack {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 0 0 56px;
+  display: flex;
+  flex-direction: column;
+  gap: 80px;
+}
+/* Force a consistent 80px rhythm between every frame, regardless of any
+   per-frame margin overrides further down. (Inline img margins on individual
+   frames are still allowed so intentional overlaps can break the rhythm.) */
+.tt-stack > .tt-frame { margin-top: 0 !important; margin-bottom: 0 !important; }
+.tt-stack > .tt-frame + .tt-frame { margin-top: 0 !important; }
+.tt-stack img {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
+/* The hero image already has its own padding baked in; trim the top so the
+   page begins flush with the breadcrumb. */
+.tt-hero {
+  background: var(--paper);
+  padding-top: 8px;
+}
+
+/* The Affinity / Sketches / wireframes / persona / process pages are
+   designed full-bleed against white — give them a touch of breathing
+   room so they don't feel cramped against the breadcrumb edges. */
+.tt-frame {
+  background: var(--paper);
+}
+
+/* "What I learned" page is a deep-blue background image; let it bleed full
+   width to break the rhythm of white-on-white cards. */
+.tt-bleed-blue {
+  background: #0079A9;
+  margin-top: 32px;
+}
+.tt-bleed-blue img {
+  max-width: 1100px;
+  margin: 0 auto;
+}
+
+/* The wireframes image (#16) has stripes of pale blue/green/yellow built in
+   and looks better edge-to-edge. */
+.tt-bleed {
+  margin-top: 0;
+}
+
+/* spacing rhythm between adjacent frames */
+.tt-frame + .tt-frame {
+  margin-top: 0;
+}
+
+/* ---------- footer nav (matches other case studies) ---------- */
+.tt-foot {
+  max-width: 1100px; margin: 0 auto; padding: 32px;
+  display: flex; justify-content: space-between; align-items: center;
+  border-top: 1px solid var(--rule);
+  margin-top: 24px;
+}
+.tt-foot button {
+  background: none; border: 0; padding: 0; cursor: pointer;
+  font: inherit; color: var(--ink-2);
+  display: inline-flex; align-items: center; gap: 8px;
+  font-family: "IBM Plex Mono", monospace; font-size: 13px;
+}
+.tt-foot button:hover { color: var(--mrt-blue); }
+.tt-foot-next {
+  display: inline-flex; align-items: center; gap: 12px;
+  padding: 12px 18px; border: 1px solid var(--mrt-blue);
+  border-radius: 999px; color: var(--mrt-blue) !important;
+  background: none; cursor: pointer; font-family: "IBM Plex Mono", monospace;
+  font-size: 13px; letter-spacing: 0.04em;
+}
+.tt-foot-next:hover {
+  background: var(--mrt-blue); color: white !important;
+}
+
+/* ---------- responsive ---------- */
+@media (max-width: 720px) {
+  .tt-crumb-inner { padding: 0 20px; flex-wrap: wrap; gap: 6px; }
+  .tt-crumb-meta { display: none; }
+  .tt-foot { padding: 24px 20px; flex-direction: column; gap: 16px; align-items: stretch; }
+  .tt-foot-next { justify-content: center; }
+}
