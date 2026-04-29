@@ -49,7 +49,7 @@ function About() {
             exchange semester at <strong>Aalto University</strong> studying HCI.
           </p>
           <p>
-            As a designer, Hsueh sees user experience as the place where empathy
+            As a designer, Chen sees user experience as the place where empathy
             and engineering meet. He is drawn to design problems where small
             interaction decisions carry real consequence — surgical workflows
             where attention is finite, accessibility tools where every tap matters,
@@ -80,7 +80,7 @@ function About() {
           <div className="about-row-body">
             MSc in Interactive Media Technology<br/>
             Coursework: Multimodal Interaction and Interfaces, Human-Centered
-            Technology for Disabilities, Sound in Interaction.
+            Technology for Disabilities.
           </div>
         </div>
 
@@ -91,7 +91,7 @@ function About() {
           <div className="about-row-meta"><em>Aug. 2023 — Dec. 2023</em></div>
           <div className="about-row-body">
             Exchange Semester — Human-Computer Interaction, User Interface
-            Construction, Interactive Technology.
+            Construction.
           </div>
         </div>
 
